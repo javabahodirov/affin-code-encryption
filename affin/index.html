@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Affine Code Encryption</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="alphabet">
+            <tr class="letters">
+                <script>
+                    for (let charCode = 65; charCode < 91; charCode++) {
+                        document.write("<td>" + String.fromCharCode(charCode) + "</td>")
+                    }
+                </script>
+            </tr>
+            <tr class="codes">
+                <script>
+                    for (let letterCode = 0; letterCode < 26; letterCode++) {
+                        document.write("<td>" + letterCode + "</td>")
+                    }
+                </script>
+            </tr>
+        </table>
+        <div class="main-box">
+            <p class="caption">Affine Code Encryption</p>
+            <label for="value_a">The value of a</label>
+            <input type="number" id="value_a" min="1" placeholder="Enter the value of a">
+            <label for="value_b">The value of b</label>
+            <input type="number" id="value_b" max="25" min="1" placeholder="Enter the value of b">
+            <label for="in_text">Original / encrypted text</label>
+            <input type="text" id="in_text" placeholder="Enter the text">
+            <button type="button" onclick="output_encrypt()">ENCRYPTION</button>
+            <button type="button" onclick="output_decrypt()">DECRYPTION</button>
+        </div>
+    </div>
+
+    <p id="result"></p>
+    <script src="./encrypt.js"></script>
+    <script src="./decrypt.js"></script>
+</body>
+
+</html>
